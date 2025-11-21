@@ -1,0 +1,289 @@
+html, body {
+    height: 100%;
+    overflow: hidden;   /* ⛔ disables scrolling */
+}
+
+body {
+    display: flex;
+    justify-content: center;  /* horizontal center */
+    align-items: center;      /* vertical center */
+    height: 100vh;            /* full screen height */
+    margin: 0;                /* remove default browser spacing */
+    color: #e2e0dc;
+    background-color: #212324;
+    overflow-x: hidden;
+}
+
+.body-shrooms {
+  background: conic-gradient(
+    from 0deg at 50% 50%,
+    #1a1a1a,
+    #2d1f1f,
+    #1a3a1a,
+    #2d1f1f,
+    #1a1a1a
+  );
+  animation: shrooms 15s linear infinite;
+}
+
+@keyframes shrooms {
+  0% { filter: hue-rotate(0deg); }
+  100% { filter: hue-rotate(360deg); } 
+}
+
+.info{
+    position: absolute; /*positioning for the info spot*/
+    top: 40vh;
+    right: 4.5vw;
+}
+.info img {
+    width: 5vw; /* size for the joker card */
+    height: auto;
+}
+    .info::after { /* infobox with text, and where to position it */
+    content: "Click to see game rules and instructions";
+    position: absolute;
+    right: 6vw;
+    background-color: rgba(0, 0, 0, 0.895);
+    color: white;
+    padding: 0.5vw;
+    border-radius: 1vw;
+    opacity: 0;
+    font-size: small;
+    text-align: center;
+    font-style: italic;
+    font-family: Arial, sans-serif;
+}
+
+.info:hover::after { /* needed for hover effect to show the text */
+    opacity: 1;
+}
+/* Rules styling */
+#rules {
+    display: none; /* Hidden by default */
+    text-align: center;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.671);
+    font-style: italic;
+    font-family: Arial, sans-serif;
+    font-size: 2.5vmin;
+}
+
+h3{
+    text-align: center;
+    margin-top: 4vh;
+    font-size: 5vmin;
+    margin-bottom: 4vh;
+    text-decoration: underline;
+}
+h4{
+    text-align: center;
+    margin-top: 4vh;
+    font-size: 3vmin;
+    
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.cards{
+    height: auto !important;
+    width: 7vw !important;
+     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    
+}
+#cards5{
+  position: absolute;
+   box-shadow: 20px 20px 600px rgba(0, 0, 0, 0.3);
+}
+#cards6{
+  position: absolute;
+  transform: rotate(10deg);
+   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.3);
+}
+#cards7{
+  position: absolute;
+  transform: rotate(15deg);
+   box-shadow: 20p 20px 60px rgba(0, 0, 0, 0.3);
+}
+#cards8{
+  position: absolute;
+  transform: rotate(-10deg);
+   box-shadow: 20px 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.pile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative !important;
+    left: 22vw;
+    top: -3vh;
+}
+
+.table {
+    position: relative;          /* cards are positioned relative to this */
+    width: 70vw;               /* pick a width you like */
+    margin: auto;           /* center table on the page */
+}
+
+/* poker table image fills the .table box */
+#pokertable {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+/* overlay that covers the entire table */
+.cardandquestion {
+    position: absolute;
+    top: -4vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    /*flex container */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2vh;              /* space between cards row and question */
+}
+/* row of cards */
+.flexy {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    gap: 3.5vw;
+    left: -4vw;
+}
+
+#question {
+    color: #f5f5f5;               /* adjust to match your design */
+    font-family: "Courier New", monospace;
+    font-size: 2.5vmin;
+}
+
+
+#counter {
+    position: relative !important;
+    align-items: center;
+    justify-content: center;
+    left: 35vw;
+    bottom: 18vh;
+    font-size: 4vmin;
+}
+
+.corner-button{
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer; 
+
+    width: 10vw;
+    height: 10vw;   
+    
+    position: absolute;
+    
+    z-index: 9999;
+    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+#top-left {
+    background-image: url("../assets/chips/blue_chip.png");
+    
+    top: 5vh;
+    left: 2vw;
+}
+
+#top-right {
+    background-image: url("../assets/chips/green_chip.png");
+    
+    top: 5vh;
+    right: 2vw;
+}
+
+#bottom-left {
+    background-image: url("../assets/chips/red_chip.png");
+      
+    bottom: 5vh;
+    left: 2vw;
+}
+
+#bottom-right {
+    background-image: url("../assets/chips/black_chip.png");
+      
+    bottom: 5vh;
+    right: 2vw;
+}
+
+.win{
+    position: fixed;
+    inset: 0;
+    display: none; 
+    align-items: center;
+    justify-content: center;
+    background-color: #2729326e;
+    width: 100vw;
+    height: 100vh;
+    z-index: 1000;
+}
+
+.winbox{
+    background-color: #272932;
+    height: 500px;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 10px;
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 24px; 
+}
+
+.winbox p{ 
+    text-align: center; 
+    font-size: 40px;  
+    margin: 20px;
+}
+
+
+.reset {
+    background: #90ee90;
+    color: #000;
+    font-weight: bold;
+    font-size: 25px;
+    padding: 14px 28px;
+    border: none;
+    cursor: pointer;
+    align-items: center;
+    border-radius: 6px;
+}
+
+.win-actions {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 12px;
+}
+
+
+.reset{
+    left: 30%;
+}

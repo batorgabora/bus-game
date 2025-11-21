@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png">
+    <link rel="stylesheet" href="css/style.css">
+    <title></title>
+</head>
+<body>
+    <button class="corner-button" id="top-left"></button>
+    <button class="corner-button" id="top-right"></button>
+    <button class="corner-button" id="bottom-left"></button>
+    <button class="corner-button" id="bottom-right"></button>
+    <p class="info"><img src="assets/cards/jokers/joker-2.svg" alt="info"></p>
+    <div class="container">
+        <div class="table">
+            <img src="assets/pokertable.png" alt="pokertable" id="pokertable">
+             <p id="counter">counter</p>
+            <div class="cardandquestion">
+                <div class="flexy">
+                    <div>
+                        <img src="assets/cards/hearts/hearts-ace.svg" alt="" class="cards" id="card1" >
+                    </div>
+                    <div>
+                        <img src="assets/cards/diamonds/diamonds-5.svg" alt="" class="cards" id="card2">
+                    </div>
+                    <div>
+                        <img src="assets/cards/clubs/clubs-jack.svg" alt="" class="cards" id="card3">
+                    </div>
+                    <div>
+                        <img src="assets/cards/spades/spades-8.svg" alt="" class="cards" id="card4">
+                    </div>
+                    
+                </div>
+                <div class="pile">
+                        <img src="assets/cards/card-back.svg" alt="" class="cards" id="cards5">
+                        <img src="assets/cards/card-back.svg" alt="" class="cards" id="cards6">
+                        <img src="assets/cards/card-back.svg" alt="" class="cards" id="cards7">
+                        <img src="assets/cards/card-back.svg" alt="" class="cards" id="cards8">
+                </div>
+
+                <div id="question">
+                    <h2>Will the card be Red or Black?</h2>
+                </div>
+            </div>
+        </div>
+        <div >
+    </div>
+    <div>
+   <div id="rules">
+    <h3>Bus Game Rules &#x1F68C;</h3>
+    
+    <p>The game begins with a shuffled standard 52-card deck. The player must advance through four stages. In each stage, a prediction is made, and a card is revealed from the top of the deck to determine the outcome.</p>
+
+    <div class="rule-step">
+        <h4>1. Color Reveal</h4>
+        <p>The player predicts the color (Red or Black) of the next card. The card is drawn and revealed. If the guess matches the card's color, the game proceeds.</p>
+    </div>
+
+    <div class="rule-step">
+        <h4>2. Value Comparison</h4>
+        <p>Based on the first card revealed, the player predicts if the second card will have a higher or lower value. The second card is drawn and compared to the first.</p>
+    </div>
+
+    <div class="rule-step">
+        <h4>3. Range Determination</h4>
+        <p>The values of the first two cards create a numeric range. The player predicts if the third card will fall strictly inside or outside these two numbers. The third card is drawn and revealed.</p>
+    </div>
+
+    <div class="rule-step">
+        <h4>4. Suit Prediction</h4>
+        <p>For the final card, the player must predict the specific suit (Hearts, Diamonds, Clubs, or Spades). The fourth card is drawn to verify the prediction.</p>
+    </div>
+
+    <div class="rule-note">
+        <h4>Deck Reset</h4>
+        <p>Cards are dealt continuously from the deck. If the deck is exhausted during gameplay, it is automatically reshuffled to continue the game.</p>
+    </div>
+</div>
+    <div class="win">
+        <div class="winbox">
+            <p>You Won !</p>
+            <p>You won in </p> <p id="tries">x</p> <p>tries</p>
+            
+            <button class="reset">Reset</button>
+        </div>
+    </div>
+    <script src="js/alternate.js"></script>
+</body>
+</html>
