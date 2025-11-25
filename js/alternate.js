@@ -8,24 +8,7 @@ function saveGameState() {
     }
     function loadGameState() {
     const savedState = localStorage.getItem("busGameSave");
-    
-    // Check if any saved data exists
-    if (savedState) {
-        try {
-            // Parse the JSON string back into a JavaScript object
-            const gameState = JSON.parse(savedState);
-            
-            // Apply the saved count to the global variable and display element
-            if (typeof gameState.count === 'number') {
-                counting = gameState.count;
-                document.getElementById("counter").innerHTML = counting;
-                return true; // Load successful
-            }
-        } catch (e) {
-            console.error("Error loading or parsing game state:", e);
-        }
-    }
-    return false; // Load failed or no data found
+  
 }
 
   loadGameState();
