@@ -3,12 +3,11 @@ document.addEventListener('DOMContentLoaded', function() {
 const savedCounting = localStorage.getItem("counting");
     
 function saveGameState() {
-    const gameState = {count: counting};
+    const gameState = {c};
         localStorage.setItem("busGameSave", JSON.stringify(gameState));
     }
-    function loadGameState() {
-    const savedState = localStorage.getItem("busGameSave");
-  
+function loadGameState() {
+const savedState = localStorage.getItem("busGameSave");
 }
 
   loadGameState();
@@ -83,7 +82,7 @@ const questions=[
 ];
 const counter = document.getElementById("counter");
 counter.innerHTML = parseInt(counter.innerHTML);;
-let counting=0;
+let ng=0;
 
 var question = document.getElementById("question");
 
@@ -189,7 +188,7 @@ function color(cardsrc) {
 
 function first(){
   loadGameState();
-  if (counting > 10) {
+  if (ng > 10) {
     document.body.classList.add("body-shrooms");    // document.body.style.animation = "shrooms 60s linear infinite";
   } 
   else{
@@ -199,8 +198,8 @@ function first(){
     clear();
     counter.innerHTML = counting;
     card1.setAttribute("src", "assets/cards/card-back.svg");
-    btnTopLeft.style.backgroundImage = "url('../assets/chips/red_chip.png')";
-    btnTopRight.style.backgroundImage = "url('../assets/chips/black_chip.png')";
+    btnTopLeft.style.backgroundImage = "url('assets/chips/red_chip.png')";
+    btnTopRight.style.backgroundImage = "url('assets/chips/black_chip.png')";
     question.innerHTML = questions[0];
 
     let drawn = draw();
@@ -235,8 +234,8 @@ function first(){
 
 function second(){
     card2.setAttribute("src", "assets/cards/card-back.svg");
-    btnTopLeft.style.backgroundImage = "url('../assets/chips/up.png')";
-    btnTopRight.style.backgroundImage = "url('../assets/chips/down.png')";
+    btnTopLeft.style.backgroundImage = "url('assets/chips/up.png')";
+    btnTopRight.style.backgroundImage = "url('assets/chips/down.png')";
     question.innerHTML = questions[1];
 saveGameState();
     let previousnum = valuate(card1.src);
@@ -274,8 +273,8 @@ saveGameState();
 
 function third(){
   card3.setAttribute("src", "assets/cards/card-back.svg");
-  btnTopLeft.style.backgroundImage = "url('../assets/chips/outside.png')";
-  btnTopRight.style.backgroundImage = "url('../assets/chips/between.png')";
+  btnTopLeft.style.backgroundImage = "url('assets/chips/outside.png')";
+  btnTopRight.style.backgroundImage = "url('assets/chips/between.png')";
   question.innerHTML = questions[2];
 
   let firstnum = valuate(card1.src);
@@ -320,10 +319,10 @@ function third(){
 
 function fourth(){
   card4.setAttribute("src", "assets/cards/card-back.svg");
-  btnTopLeft.style.backgroundImage = "url('../assets/chips/heart.png')";
-  btnTopRight.style.backgroundImage = "url('../assets/chips/diamond.png')";
-  btnBottomLeft.style.backgroundImage = "url('../assets/chips/spade.png')";
-  btnBottomRight.style.backgroundImage = "url('../assets/chips/club.png')";
+  btnTopLeft.style.backgroundImage = "url('assets/chips/heart.png')";
+  btnTopRight.style.backgroundImage = "url('assets/chips/diamond.png')";
+  btnBottomLeft.style.backgroundImage = "url('assets/chips/spade.png')";
+  btnBottomRight.style.backgroundImage = "url('assets/chips/club.png')";
   question.innerHTML = questions[3];
 
   const drawn = draw();
