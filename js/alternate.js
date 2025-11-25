@@ -365,7 +365,7 @@ function fourth(){
 
     // show popup and set tries
     winEl.style.display = 'flex';                             //by default it's set to none
-    document.getElementById("tries").innerHTML = counting;
+    document.getElementById("tries").innerHTML = counting-1;
 
     // wire up reset button
     const resetBtnInWin = winEl.querySelector('.reset');
